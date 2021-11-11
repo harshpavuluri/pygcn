@@ -12,7 +12,11 @@ class GCN(nn.Module):
         self.dropout = dropout
 
     def forward(self, x, adj):
-        x = F.relu(self.gc1(x, adj))
-        x = F.dropout(x, self.dropout, training=self.training)
+        #First layer
+        x = self.gc1(x, adj)
+        x = F.relu(x)
+        #random dropout per layer to prevent overfitting
+        x = F.dropout(x, self.dropout, training=self.training) 
+        #Second layer
         x = self.gc2(x, adj)
         return F.log_softmax(x, dim=1)
