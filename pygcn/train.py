@@ -47,13 +47,13 @@ def test(model, features, adj, labels, idx_train, idx_val, idx_test):
 def main():
     # Training settings
     param = {
-        'no_cuda': False,
-        'seed': 42,
-        'epochs': 200,
-        'lr': 0.01,
-        'weight_decay': 5e-4,
-        'hidden': 16,
-        'dropout': 0.5
+        'no_cuda': False, #set True if you don't have a GPU
+        'seed': 42, #random seed for reproducibility
+        'epochs': 200, #Number of epochs to train for
+        'lr': 0.01, #Learning rate
+        'weight_decay': 5e-4, #Weight decay (L2 loss on parameters)
+        'hidden': 16, #Number of hidden units
+        'dropout': 0.5 #Dropout rate
     }
 
     cuda = not param['no_cuda'] and torch.cuda.is_available()
