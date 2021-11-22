@@ -12,7 +12,7 @@ import torch.optim as optim
 from utils import load_data, accuracy
 from models import GCN
 
-def train(epoch,model, optimizer, features, adj, labels, idx_train, idx_val, idx_test):
+def train(epoch,model, optimizer, features, adj, labels, idx_train, idx_val):
     t = time.time()
     model.train()
     optimizer.zero_grad()
@@ -32,7 +32,7 @@ def train(epoch,model, optimizer, features, adj, labels, idx_train, idx_val, idx
           'time: {:.4f}s'.format(time.time() - t))
 
 
-def test(model, features, adj, labels, idx_train, idx_val, idx_test):
+def test(model, features, adj, labels, idx_test):
     model.eval()
     output = model(features, adj)
     loss_test = F.nll_loss(output[idx_test], labels[idx_test])
@@ -82,12 +82,12 @@ def main():
     # Train model
     t_total = time.time()
     for epoch in range(param['epochs']):
-        train(epoch, model, optimizer, features, adj, labels, idx_train, idx_val, idx_test)
-    print("Optimization Finished!")
+        train(epoch, model, optimizer, features, adj, labels, idx_train, idx_val)
+    print("Training Finished!")
     print("Total time elapsed: {:.4f}s".format(time.time() - t_total))
 
     # Testing
-    test(model, features, adj, labels, idx_train, idx_val, idx_test)
+    test(model, features, adj, labels, idx_test)
 
 main()
     
