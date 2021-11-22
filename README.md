@@ -15,6 +15,11 @@ This implementation makes use of the Cora dataset from [2]. This is a document g
 
 Set the parameters in the train.py file to what you like.
 
+
+## Video Link
+
+[Link to Video Presentation](https://youtu.be/bvIvccHRlYE)
+
 ## References
 
 [1] [Kipf & Welling, Semi-Supervised Classification with Graph Convolutional Networks, 2016](https://arxiv.org/abs/1609.02907)
@@ -22,11 +27,12 @@ Set the parameters in the train.py file to what you like.
 [2] [Sen et al., Collective Classification in Network Data, AI Magazine 2008](http://linqs.cs.umd.edu/projects/projects/lbc/)
 
 
-## Github Repositories References
+## Repository References
 
 [3] [Kipf & Welling TensorFlow Implementation](https://github.com/tkipf/gcn)
 
 Code was dervied from this repository and reimplemented into this PyTorch implementation.
+
 
 ## Cite
 
