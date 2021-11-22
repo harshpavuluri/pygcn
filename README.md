@@ -7,15 +7,13 @@ For a more in-depth understanding, please see the reference section:
 
 Thomas Kipf, [Graph Convolutional Networks](http://tkipf.github.io/graph-convolutional-networks/) (2016)
 
-![Graph Convolutional Networks](figure.png)
-
-
 This implementation makes use of the Cora dataset from [2].
-
 
 ## Usage
 
 ```python train.py```
+
+Set the parameters in the train.py file to what you like.
 
 ## References
 

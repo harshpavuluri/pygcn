@@ -9,11 +9,8 @@ import torch
 import torch.nn.functional as F
 import torch.optim as optim
 
-from pygcn.utils import load_data, accuracy
-from pygcn.models import GCN
-
-
-
+from utils import load_data, accuracy
+from models import GCN
 
 def train(epoch,model, optimizer, features, adj, labels, idx_train, idx_val, idx_test):
     t = time.time()
